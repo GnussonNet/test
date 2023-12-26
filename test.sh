@@ -146,7 +146,7 @@ function default_settings() {
   MAC="$GEN_MAC"
   VLAN=""
   MTU=""
-  START_VM="yes"
+  START_VM="no"
   echo -e "${DGN}Using HAOS Version: ${BGN}${BRANCH}${CL}"
   echo -e "${DGN}Using Virtual Machine ID: ${BGN}${VMID}${CL}"
   echo -e "${DGN}Using Machine Type: ${BGN}i440fx${CL}"
@@ -434,7 +434,7 @@ qm set $VMID \
   <a href='https://ko-fi.com/D1D7EP4GF'><img src='https://img.shields.io/badge/&#x2615;-Buy me a coffee-blue' /></a>
   </div>" >/dev/null
 msg_ok "Created HAOS VM ${CL}${BL}(${HN})"
-if [ "$START_VM" == "no" ]; then
+if [ "$START_VM" == "yes" ]; then
   msg_info "Starting Home Assistant OS VM"
   qm start $VMID
   msg_ok "Started Home Assistant OS VM"
